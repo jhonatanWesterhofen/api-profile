@@ -1,0 +1,11 @@
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/domain/bo/CardFileBO.java
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/infra/database/panache/repositories/FIleImageRepository.java
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/domain/usecase/CreateUserProfileImage.java
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/infra/database/panache/model/PanacheCarProfile.java
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/service/UserService.java
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/presentation/controllers/UserController.java
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/domain/repositories/IFileRepository.java
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/domain/repositories/IProfileRepository.java
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/domain/dto/CarFileDTO.java
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/infra/database/panache/repositories/PanacheFileRepository.java
+/home/operador/Documentos/projetos/api-image/src/main/java/com/base/infra/utils/MultiPartUploadFile.java

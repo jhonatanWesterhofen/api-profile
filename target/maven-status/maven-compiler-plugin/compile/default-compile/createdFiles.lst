@@ -1,0 +1,6 @@
+com/base/domain/usecase/CreateUserProfileImage.class
+com/base/presentation/controllers/UserController.class
+META-INF/panache-archive.marker
+com/base/infra/utils/MultiPartUploadFile.class
+com/base/infra/database/panache/teste.class
+com/base/service/UserService.class
