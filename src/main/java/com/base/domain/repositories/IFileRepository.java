@@ -2,10 +2,14 @@ package com.base.domain.repositories;
 
 import java.io.InputStream;
 
-import com.base.domain.dto.CarFileDTO;
+import com.base.domain.dto.CarDTO;
 
+/**
+ *
+ * @author Jhonatan
+ */
 public interface IFileRepository {
 
-    CarFileDTO createCarImage(CarFileDTO dto, InputStream file);
+    CarDTO createCarImage(CarDTO dto, InputStream file);
 
 }

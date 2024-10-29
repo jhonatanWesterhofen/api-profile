@@ -1,14 +1,14 @@
 package com.base.service;
 
+import java.util.List;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.core.Response;
 
-import com.base.domain.dto.CarFileDTO;
+import com.base.domain.repositories.ICarProfileRepository;
 import com.base.domain.repositories.IFileRepository;
-import com.base.domain.repositories.IProfileRepository;
-import com.base.domain.usecase.CreateUserProfileImage;
 import com.base.infra.utils.MultiPartUploadFile;
 
 @ApplicationScoped
@@ -18,20 +18,31 @@ public class UserService {
     protected IFileRepository fileRepository;
 
     @Inject
-    protected IProfileRepository iProfileRepository;
+    protected ICarProfileRepository iProfileRepository;
 
     @Transactional
-    public Response uploadAvatar(MultiPartUploadFile multipart, String plate) {
+    public Response uploadAvatar(List<MultiPartUploadFile> multiparts, String plate) {
 
-        var car = new CarFileDTO();
-        car.setPlates(plate);
+        // for (MultiPartUploadFile multipart : multiparts) {
 
-        var createImage = new CreateUserProfileImage(fileRepository, iProfileRepository);
-        var image = createImage.execute(car, multipart.file);
+        // var car = new CarFileDTO();
+        // car.setPlates(plate);
 
-        // var toBase64 = Base64.getEncoder().encodeToString(image);
+        // var createImage = new CreateUserProfileImage(fileRepository,
+        // iProfileRepository);
+        // var image = createImage.execute(car, multipart.getFile());
 
-        // return Response.ok().entity(Map.of("base64", toBase64)).build();
-        return Response.ok().build();
+        // var toBase64 = Base64.getEncoder().encodeToString(image.getProfileImg());
+
+        // byte[] imageBytes = Base64.getDecoder().decode(toBase64);
+
+        // return Response.ok(imageBytes)
+        // .header("Content-Type", "image/png")
+        // .build();
+
+        // }
+
+        return null;
+
     }
 }

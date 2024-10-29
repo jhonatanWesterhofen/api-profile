@@ -21,9 +21,9 @@ public class UserController {
     @POST
     @Path("/avatar")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public Response createAvatar(@MultipartForm MultiPartUploadFile file) {
+    public Response createAvatar(@MultipartForm MultiPartUploadFile form) {
 
-        return userService.uploadAvatar(file, null);
+        return userService.uploadAvatar(null, null);
+
     }
-
 }

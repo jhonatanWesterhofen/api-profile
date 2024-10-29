@@ -10,18 +10,22 @@ import javax.imageio.ImageIO;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
 
-import com.base.domain.dto.CarFileDTO;
+import com.base.domain.dto.CarDTO;
 import com.base.domain.repositories.IFileRepository;
 
+/**
+ *
+ * @author Jhonatan
+ */
 @ApplicationScoped
 public class FIleImageRepository implements IFileRepository {
 
     private static final String DEFAULT_FILE_TYPE = "png";
 
-    private static final Integer DEFAULT_IMAGE_SIZE = 180;
+    private static final Integer DEFAULT_IMAGE_SIZE = 1080;
 
     @Override
-    public CarFileDTO createCarImage(CarFileDTO dto, InputStream file) {
+    public CarDTO createCarImage(CarDTO dto, InputStream file) {
 
         try {
             var imgProfile = file.readAllBytes();
@@ -29,7 +33,7 @@ public class FIleImageRepository implements IFileRepository {
 
             var teste = resizeImage(bufferedImage, DEFAULT_IMAGE_SIZE, DEFAULT_IMAGE_SIZE);
 
-            dto.setProfileImg(teste);
+            // dto.setProfileImg(teste);
 
             return dto;
 

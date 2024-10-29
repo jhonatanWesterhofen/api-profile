@@ -1,6 +1,12 @@
 com/base/domain/usecase/CreateUserProfileImage.class
+com/base/domain/repositories/IProfileRepository.class
+com/base/infra/utils/MultiPartUploadFile.class
+com/base/service/UserService.class
+com/base/infra/database/panache/repositories/PanacheFileRepository.class
+com/base/infra/database/panache/repositories/FIleImageRepository.class
+com/base/infra/database/panache/model/PanacheCarProfile.class
 com/base/presentation/controllers/UserController.class
 META-INF/panache-archive.marker
-com/base/infra/utils/MultiPartUploadFile.class
-com/base/infra/database/panache/teste.class
-com/base/service/UserService.class
+com/base/domain/repositories/IFileRepository.class
+com/base/domain/bo/CardFileBO.class
+com/base/domain/dto/CarFileDTO.class
