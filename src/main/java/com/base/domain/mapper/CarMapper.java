@@ -18,9 +18,7 @@ public class CarMapper {
             return null;
         }
 
-        var listAdvertisement = ListUtil.stream(dto.getlAdvertisement())
-                .map(AdvertisementMapper::toBO)
-                .collect(Collectors.toList());
+ 
 
         return new CarBO.Builder()
                 .setId(dto.getId())
@@ -34,7 +32,6 @@ public class CarMapper {
                 .setCreatedAt(dto.getCreatedAt())
                 .setAmount(dto.getAmount())
                 .setUrlImages(dto.getUrlImages())
-                .setlistAdvertinsent(listAdvertisement)
                 .build();
     }
 
@@ -45,9 +42,7 @@ public class CarMapper {
         }
         CarDTO carDTO = new CarDTO();
 
-        var listAdvertisement = ListUtil.stream(bo.getListAdvertisement())
-                .map(AdvertisementMapper::toDTO)
-                .collect(Collectors.toList());
+   
 
         carDTO.setId(bo.getId());
         carDTO.setModel(bo.getModel());
@@ -60,7 +55,6 @@ public class CarMapper {
         carDTO.setCreatedAt(bo.getCreatedAt());
         carDTO.setAmount(bo.getAmount());
         carDTO.setUrlImages(bo.getUrlImages());
-        carDTO.setlAdvertisement(listAdvertisement);
 
         return carDTO;
     }

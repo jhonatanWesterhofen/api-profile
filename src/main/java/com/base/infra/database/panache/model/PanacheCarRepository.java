@@ -2,19 +2,11 @@ package com.base.infra.database.panache.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.CollectionTable;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -60,14 +52,6 @@ public class PanacheCarRepository extends PanacheEntityBase {
 
     @Column(name = "AMOUNT")
     private BigDecimal amount;
-
-    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<PanacheAdvertisementRepository> advertisement;
-
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "SC_URL_CAR_IMAGES", joinColumns = @JoinColumn(name = "id"))
-    @Column(name = "ID_CAR")
-    private List<String> urlImages;
 
     public Integer getId() {
         return id;
@@ -148,21 +132,4 @@ public class PanacheCarRepository extends PanacheEntityBase {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
-
-    public List<String> getUrlImages() {
-        return urlImages;
-    }
-
-    public void setUrlImages(List<String> urlImages) {
-        this.urlImages = urlImages;
-    }
-
-    public List<PanacheAdvertisementRepository> getAdvertisement() {
-        return advertisement;
-    }
-
-    public void setAdvertisement(List<PanacheAdvertisementRepository> advertisement) {
-        this.advertisement = advertisement;
-    }
-
 }

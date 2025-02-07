@@ -1,8 +1,5 @@
 package com.base.infra.mapper;
 
-import java.util.stream.Collectors;
-
-import com.base.domain.Utils.ListUtil;
 import com.base.domain.bo.CarBO;
 import com.base.infra.database.panache.model.PanacheCarRepository;
 
@@ -18,12 +15,7 @@ public class PanacheCarMapper {
             return null;
         }
 
-        var listAdvertisement = ListUtil.stream(panache.getAdvertisement())
-                .map(PanacheAdvertisementMapper::toDomain)
-                .collect(Collectors.toList());
-
         return new CarBO.Builder()
-                .setId(panache.getId())
                 .setModel(panache.getModel())
                 .setMileage(panache.getMileage())
                 .setDescription(panache.getDescription())
@@ -33,9 +25,6 @@ public class PanacheCarMapper {
                 .setExchange(panache.getExchange())
                 .setCreatedAt(panache.getCreatedAt())
                 .setAmount(panache.getAmount())
-                .setUrlImages(panache.getUrlImages())
-                .setlistAdvertinsent(
-                        listAdvertisement)
                 .build();
     }
 
@@ -47,10 +36,6 @@ public class PanacheCarMapper {
             return null;
         }
 
-        var listAdvertisement = ListUtil.stream(bo.getListAdvertisement())
-                .map(PanacheAdvertisementMapper::toEntity)
-                .collect(Collectors.toList());
-
         panache.setId(bo.getId());
         panache.setModel(bo.getModel());
         panache.setMileage(bo.getMileage());
@@ -61,8 +46,6 @@ public class PanacheCarMapper {
         panache.setExchange(bo.getExchange());
         panache.setCreatedAt(bo.getCreatedAt());
         panache.setAmount(bo.getAmount());
-        panache.setUrlImages(bo.getUrlImages());
-        panache.setAdvertisement(listAdvertisement);
 
         return panache;
     }

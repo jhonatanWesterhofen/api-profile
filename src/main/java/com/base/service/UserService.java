@@ -7,6 +7,9 @@ import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.core.Response;
 
+import com.base.domain.bo.CarBO;
+import com.base.domain.dto.CarDTO;
+import com.base.domain.mapper.CarMapper;
 import com.base.domain.repositories.ICarProfileRepository;
 import com.base.domain.repositories.IFileRepository;
 import com.base.infra.utils.MultiPartUploadFile;
@@ -43,6 +46,17 @@ public class UserService {
         // }
 
         return null;
+
+    }
+
+    @Transactional
+    public Response createCar(CarDTO car) {
+
+        CarBO cardBO = CarMapper.toBO(car);
+
+        iProfileRepository.create(cardBO);
+
+        return Response.ok().build();
 
     }
 }

@@ -33,8 +33,6 @@ public class FIleImageRepository implements IFileRepository {
 
             var teste = resizeImage(bufferedImage, DEFAULT_IMAGE_SIZE, DEFAULT_IMAGE_SIZE);
 
-            // dto.setProfileImg(teste);
-
             return dto;
 
         } catch (IOException e) {
