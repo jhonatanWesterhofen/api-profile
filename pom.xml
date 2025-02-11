@@ -151,6 +151,13 @@
     </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+     <id>graalvm-repo</id>
+      <url>https://github.com/graalvm/maven-repo</url>
+    </repository>
+  </repositories>
+
   <build>
     <plugins>
       <plugin>
